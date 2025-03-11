@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedacDent</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <header>
+        <div id="container-logo">
+            <img onclick="verInicioBoton()" id="logo" src="img/logo.png">
+        </div>
+        <div id="container-botones">
+            <button id="boton-pedir-cita" onclick="pedirCitaBoton()"> Pedir cita</button>
+            <button id="boton-ver-citas" onclick="verCitasBoton()"> Ver citas</button>
+        </div>
+        <div id="citaconfirmada">
+            Cita Confirmada 
+        </div>
+        <div id="cita-modificada">
+            Cita Modificada
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio">
+           
+            <img class="fondo" src="img/foto1.jpg">
+            <img class="fondo" src="img/foto2.jpg">
+            <img class="fondo" src="img/foto3.jpg">
+            <img class="fondo" src="img/foto4.jpg">
+
+            
+        </section>
+
+
+        <section id="pedir-cita">
+            <h1>Pedir citas</h1>
+            <form id="formulario" action="#" method="post">
+
+                <fieldset>
+                    <legend>Fecha de la cita</legend>
+                    <input type="datetime-local" name="fecha" id="fecha" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Información del paciente</legend>
+                    <label for="nombre"> Nombre:</label>
+                    <input type="text" name="nombre" id="nombre" pattern="[A-Za-z ]{1,30}"required>
+                    <label for="apellidos">Apellidos: </label>
+                    <input type="apellidos" name="apellidos" id="apellidos" pattern="[A-Za-z ]{1,30}"required>
+                    <br>
+                    <br>
+                    <label for="dni">DNI:</label>
+                    <input type="text" name="dni" id="dni" pattern="[0-9]{8}[A-Za-z]{1}" placeholder="8 números y una letra" required >
+                    <label for="número">Número: </label>
+                    <input type="text" name="número"id="número" pattern="[0-9]{9}" required>
+                    <br>
+                    <br>
+                    <label for="nacimiento">Nacimiento:</label>
+                    <input type="date" name="nacimiento" id="nacimiento" required>
+                    <br>
+                    <br>
+                    <label for="observaciones">Observaciones:</label>
+                    <br>
+                    <textarea name="observaciones" id="observaciones" cols="60" rows="3"></textarea>
+                    <br>
+                    <br>
+                    <button type="button" id="boton">Confirmar Cita</button>
+                    <button type="button" id="borrar" onclick="borrarTodo()">Borrar todo</button>
+
+                </fieldset>
+
+            </form>
+
+        </section>
+
+        <div id="ver-citas">
+            <h1> Citas </h1>
+            <table>
+                <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Fecha de la cita</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Móvil</th>
+                    <th>Fecha de nacimiento</th>
+                    <th>Observaciones</th>
+                    <th>Modificar</th>
+                    <th>Borrar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="citas-no-disponibles">
+                    <td colspan="9">No hay citas disponibles</td>
+                </tr>
+            </tbody>
+            </table>
+    
+        </div>
+
+
+    </main>
+    <footer>
+<div id="izquierda">
+    <p>&copy; 2025 MedacDent</p>
+    <p>Todos los derechos reservados</p>
+</div>
+<div id="derecha">
+    <p>Contacto: 952748045 // 652146565</p>
+    <p>Email: medacdent@gmail.com</p>
+    <p>Instagram: MedacDent25</p>
+</div>
+    </footer>
+    <script src="script/pantalla.js"> </script>
+    <script src="script/objetos.js"> </script>
+    <script src="script/tabla.js"> </script>
+</body>
+
+</html>
